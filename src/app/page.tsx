@@ -1,11 +1,9 @@
 'use client';
 
-import {Button} from "@mui/material";
+import HomePage from'./home';
 
-export default function Home() {
+export default function Index() {
   return (
-    <main>
-      <Button>Hello world</Button>
-    </main>
+    <HomePage/>
   )
 }
