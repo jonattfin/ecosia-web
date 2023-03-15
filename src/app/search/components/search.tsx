@@ -26,8 +26,6 @@ export default function Component(props: SearchProps) {
             <Image
               src={Images.LogoImage}
               alt="logo"
-              width={"75px"}
-              height={"60px"}
             />
           </a>
         </Link>

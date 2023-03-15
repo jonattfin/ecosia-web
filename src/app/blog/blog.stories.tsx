@@ -10,7 +10,7 @@ export default function Index() {
 const props: BlogProps = {
   id: 1,
   projects: [],
-  reports: getReports(),
+  reports: [],
   language: "",
 };
 

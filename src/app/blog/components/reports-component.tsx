@@ -15,10 +15,6 @@ import { AppColor } from "@/app/shared-components";
 import React, { Fragment } from "react";
 import { ReportData } from "@/api/interfaces";
 
-const PieComponent = dynamic(() => import("../../shared-components/pie"), {
-  ssr: false,
-});
-
 export interface ReportsProps {
   t: ITranslationFunc;
   reports: ReportData[];
@@ -116,7 +112,7 @@ export default function Component({ t, reports }: ReportsProps) {
           <CardDiv>{t("treesFinanced")}</CardDiv>
         </Card>
         <PieContainerDiv>
-          <PieComponent data={getPieData()} />
+          {/*<PieComponent data={getPieData()} />*/}
         </PieContainerDiv>
       </Grid>
       {currentReport.investmentsInCountries.length > 0 && (

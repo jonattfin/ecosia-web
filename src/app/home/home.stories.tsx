@@ -30,11 +30,8 @@ export const MapComponent = withLanguageControls(Components.MapComponent, {
 const report: ReportData = {
   month: "January",
   year: 2022,
-  investments: range(1, 5).map((index) => ({
-    name: `${index},`,
-    value: random(10000, 10000000),
-  })),
-  countries: [],
+  investmentsInCountries: [],
+  investmentsInCategories: []
 };
 
 export const FinancialComponent = withLanguageControls(
