@@ -1,6 +1,4 @@
 import { Grid } from "@mui/material";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import Link from "next/link";
 import styled from "@emotion/styled";
 
 import { Language } from "@/providers/context";
@@ -61,15 +59,6 @@ const Component = ({ t }: { t: ITranslationFunc }) => {
             <TitleDiv>{t("weAreTransparent")}</TitleDiv>
             <div>{t("wePublishReports")}</div>
           </ContainerDiv>
-        </Grid>
-        <Grid item xs={12} xl={12}>
-          <LinkDiv>
-            <Link href="#">
-              <a>
-                {t("otherReasons")} <ChevronRightIcon fontSize="small" />
-              </a>
-            </Link>
-          </LinkDiv>
         </Grid>
         <Grid item xs={12} xl={12}>
           &nbsp;

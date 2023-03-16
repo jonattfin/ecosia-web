@@ -86,7 +86,7 @@ export default function Component({
           &nbsp;
         </Grid>
         <Grid item xl={6}>
-          {/*<Components.WhyChooseUsComponent {...{ language }} />*/}
+          <Components.WhyChooseUsComponent {...{ language }} />
         </Grid>
         <Grid item xl={3}>
           &nbsp;
