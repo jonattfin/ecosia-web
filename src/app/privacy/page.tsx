@@ -1,3 +1,5 @@
+'use client';
+
 import Head from "next/head";
 import { useContext } from "react";
 import { LanguageContext } from "@/providers/context";

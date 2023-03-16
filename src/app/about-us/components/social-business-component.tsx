@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { ITranslationFunc, withTranslations } from "../../../helpers";
 import { Language } from "../../../providers/context";
 
-import { MainTitleDiv } from "../../shared-components";
+import { MainTitleDiv } from "../../../shared-components";
 
 const Component = ({ t }: { t: ITranslationFunc }) => {
   return (

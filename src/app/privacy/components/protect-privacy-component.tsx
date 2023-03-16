@@ -4,7 +4,7 @@ import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import Image from "next/image";
 
 import * as Images from "./images";
-import { AppColor } from "@/app/shared-components";
+import { AppColor } from "@/shared-components";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 

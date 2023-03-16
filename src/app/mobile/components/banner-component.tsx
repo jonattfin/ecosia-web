@@ -8,7 +8,7 @@ import {
   AppColor,
   MainSubtitleDiv,
   MainTitleDiv,
-} from "@/app/shared-components";
+} from "@/shared-components";
 
 import * as Images from "./images";
 

@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 
-import { AppColor, MainSubtitleDiv } from "@/app/shared-components";
+import { AppColor, MainSubtitleDiv } from "@/shared-components";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 

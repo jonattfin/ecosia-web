@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from "react";
 import { LanguageContext } from "@/providers/context";
 import HowItWorksComponent from "./how-it-works-component";

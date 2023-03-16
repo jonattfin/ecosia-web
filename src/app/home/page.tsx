@@ -1,5 +1,7 @@
+'use client';
+
 import {useState, useEffect, useContext} from "react";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 import {debounce} from "lodash";
 
 import HomeComponent from "./home-component";
@@ -17,8 +19,8 @@ export default function Component() {
     console.log(`called with ${q}`);
   };
 
-  // const router = useRouter();
-  const onSearchValueSelected = (q: string) => {};
+  const router = useRouter();
+  const onSearchValueSelected = (q: string) => router.push(`/search/${q}`);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,21 +28,25 @@ export default function Component() {
       setData(fetchedData.searches);
     }
 
-    if (query.length > 0) fetchData();
+    if (query.length > 0) {
+      fetchData()
+        .catch((reason) => console.error(reason));
+    }
+
   }, [query]);
 
   const language = useContext(LanguageContext);
 
   return (
-      <HomeComponent
-        {...{
-          q: query,
-          counter,
-          onSearch: debounce(onSearch, 10),
-          onSearchValueSelected,
-          language,
-          data,
-        }}
-      />
+    <HomeComponent
+      {...{
+        q: query,
+        counter,
+        onSearch: debounce(onSearch, 10),
+        onSearchValueSelected,
+        language,
+        data,
+      }}
+    />
   );
 }

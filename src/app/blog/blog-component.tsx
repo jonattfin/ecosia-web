@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import styled from "@emotion/styled";
 
-import { AppColor, Image } from "../shared-components";
+import { AppColor, Image } from "../../shared-components";
 import * as Images from "./components/images";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";

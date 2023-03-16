@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 
-import { Image } from "../../shared-components";
+import { Image } from "../../../shared-components";
 import * as Images from "./images";
 
 export default function Component() {

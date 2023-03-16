@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 
 import * as Components from "./components";
-import { AppColor } from "@/app/shared-components";
+import { AppColor } from "@/shared-components";
 import { Language } from "@/providers/context";
 
 export default function Component({ language }: { language?: Language }) {

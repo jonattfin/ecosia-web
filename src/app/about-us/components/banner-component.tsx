@@ -3,7 +3,7 @@ import { Button, Grid } from "@mui/material";
 import { ITranslationFunc, withTranslations } from "../../../helpers";
 import { Language } from "../../../providers/context";
 
-import { MainTitleDiv } from "../../shared-components";
+import { MainTitleDiv } from "../../../shared-components";
 
 const Component = ({ t }: { t: ITranslationFunc }) => {
   return (

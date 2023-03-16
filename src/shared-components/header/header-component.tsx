@@ -10,7 +10,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { Language, TreesContext } from "@/providers/context";
 
@@ -37,10 +37,10 @@ const Component = ({ changeLanguage, t, language }: any) => {
     setAnchorEl(event.currentTarget);
   };
 
-  // const router = useRouter();
+  const router = useRouter();
   const handleClose = (url: string) => {
-    // setAnchorEl(null);
-    // router.push(url);
+    setAnchorEl(null);
+    router.push(url);
   };
 
   const handleChangeLanguage = (lang: string) => {
@@ -68,7 +68,7 @@ const Component = ({ changeLanguage, t, language }: any) => {
             >
               <Stack padding={2} direction="row">
                 <PaddingLink
-                  href="https://github.com/jonattfin/ecosia-clone-web"
+                  href="https://github.com/jonattfin/ecosia-web"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -82,11 +82,11 @@ const Component = ({ changeLanguage, t, language }: any) => {
                   <AutoStoriesIcon fontSize="small" color="secondary"></AutoStoriesIcon>
                 </PaddingLink>
                 <PaddingLink
-                  href="https://sonarcloud.io/summary/new_code?id=jonattfin_ecosia-clone2"
+                  href="https://sonarcloud.io/summary/new_code?id=jonattfin_ecosia-web"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img src="https://sonarcloud.io/api/project_badges/measure?project=jonattfin_ecosia-clone2&metric=alert_status" />
+                  <img src="https://sonarcloud.io/api/project_badges/measure?project=jonattfin_ecosia-web&metric=alert_status" />
                 </PaddingLink>
               </Stack>
 
@@ -159,7 +159,7 @@ const getPages = () => {
 // Styled Components
 
 const PaddingLink = styled.a`
-  padding: 0px 5px;
+  padding: 0 5px;
 `;
 
 // translations

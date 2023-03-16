@@ -9,7 +9,7 @@ import {
   MainTitleDiv,
   MainSubtitleDiv,
   LinkDiv,
-} from "../../shared-components";
+} from "../../../shared-components";
 import * as Images from "./images";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 

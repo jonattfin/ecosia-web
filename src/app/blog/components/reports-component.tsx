@@ -11,7 +11,7 @@ import _ from "lodash";
 
 import { ITranslationFunc } from "@/helpers";
 import { Grid } from "@mui/material";
-import { AppColor } from "@/app/shared-components";
+import { AppColor } from "@/shared-components";
 import React, { Fragment } from "react";
 import { ReportData } from "@/api/interfaces";
 

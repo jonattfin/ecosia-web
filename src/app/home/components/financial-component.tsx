@@ -8,7 +8,7 @@ import {
   MainTitleDiv,
   MainSubtitleDiv,
   LinkDiv,
-} from "@/app/shared-components";
+} from "@/shared-components";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 import { ReportData } from "@/api/interfaces";

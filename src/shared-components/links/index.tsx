@@ -21,59 +21,59 @@ export default function Links() {
             <div>
               <TitleDiv>SITEMAP</TitleDiv>
               <div>
-                <a href="src/app/shared-components/links#id">News</a>
+                <a href="@/shared-components/links/index#id">News</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">How Ecosia works</a>
+                <a href="@/shared-components/links/index#id">How Ecosia works</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">About us</a>
+                <a href="@/shared-components/links/index#id">About us</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Mobile app</a>
+                <a href="@/shared-components/links/index#id">Mobile app</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Privacy</a>
+                <a href="@/shared-components/links/index#id">Privacy</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Settings</a>
+                <a href="@/shared-components/links/index#id">Settings</a>
               </div>
             </div>
             <div>
               <TitleDiv>Resources</TitleDiv>
               <div>
-                <a href="src/app/shared-components/links#id">FAQ</a>
+                <a href="@/shared-components/links/index#id">FAQ</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Advertise on Ecosia</a>
+                <a href="@/shared-components/links/index#id">Advertise on Ecosia</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Financial reports</a>
+                <a href="@/shared-components/links/index#id">Financial reports</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Blog</a>
+                <a href="@/shared-components/links/index#id">Blog</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Shop</a>
+                <a href="@/shared-components/links/index#id">Shop</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Press</a>
+                <a href="@/shared-components/links/index#id">Press</a>
               </div>
               <div>
-                <a href="src/app/shared-components/links#id">Jobs</a>
+                <a href="@/shared-components/links/index#id">Jobs</a>
               </div>
             </div>
             <div>
               <TitleDiv>Legal</TitleDiv>
               <div>
                 <div>
-                  <a href="src/app/shared-components/links#id">Privacy policy</a>
+                  <a href="@/shared-components/links/index#id">Privacy policy</a>
                 </div>
                 <div>
-                  <a href="src/app/shared-components/links#id">Terms of service</a>
+                  <a href="@/shared-components/links/index#id">Terms of service</a>
                 </div>
                 <div>
-                  <a href="src/app/shared-components/links#id">Imprint</a>
+                  <a href="@/shared-components/links/index#id">Imprint</a>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import { Button, Grid } from "@mui/material";
 import styled from "@emotion/styled";
 
-import { MainTitleDiv } from "@/app/shared-components";
+import { MainTitleDiv } from "@/shared-components";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 

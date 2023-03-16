@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 
-import { Image, MainTitleDiv } from "../../shared-components";
+import { Image, MainTitleDiv } from "../../../shared-components";
 import * as Images from "./images";
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
