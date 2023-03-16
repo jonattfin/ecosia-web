@@ -22,6 +22,7 @@
     "eslint-config-next": "13.2.4",
     "lodash": "^4.17.21",
     "lorem-ipsum": "^2.0.8",
+    "msw-devtools": "^1.0.2",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
+    "@mswjs/data": "^0.11.2",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -40,6 +42,10 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/lodash": "^4.14.191",
     "babel-loader": "^8.3.0",
-    "eslint-plugin-storybook": "^0.6.11"
+    "eslint-plugin-storybook": "^0.6.11",
+    "msw": "^1.1.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

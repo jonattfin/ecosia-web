@@ -1,25 +1,27 @@
+'use client';
+
 import {useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 import {debounce} from "lodash";
 
 import SearchComponent, {SearchProps} from "./search-component";
-import {searchByQueryAsync} from "../../api";
-import {ResultQuery} from "../../api/interfaces";
+import {ResultQuery} from "@/api/interfaces";
+import {searchByQueryAsync} from "@/api";
 
-interface IndexSearchProps {
-  incrementTreeCount: () => void;
+type IndexSearchProps = {
 }
 
-interface ResultsState {
+type ResultsState = {
   page: number;
   size: number;
   count: number;
   searches: ResultQuery[];
 }
 
-export default function Component({incrementTreeCount}: IndexSearchProps) {
+export default function Component({}: IndexSearchProps) {
   const router = useRouter();
-  const {id} = router.query;
+  // const {id} = router.query; // TODO
+  const id = 1;
 
   const [resultsObject, setResultsObject] = useState<ResultsState>({
     page: 1,
@@ -44,10 +46,11 @@ export default function Component({incrementTreeCount}: IndexSearchProps) {
     };
 
     if (id) {
-      fetchData();
+      fetchData()
+        .catch(reason => console.error(reason));
     }
 
-    incrementTreeCount();
+    // incrementTreeCount(); // TODO
   }, [id]);
 
   const props: SearchProps = {

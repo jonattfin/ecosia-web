@@ -11,6 +11,13 @@ import {
   TreesContext,
 } from '@/providers/context';
 
+import {MSWWrapperProps} from "@/providers/msw";
+import dynamic from "next/dynamic";
+
+const MSWWrapper = dynamic<MSWWrapperProps>(() =>
+  import("./../providers/msw").then(({MSWWrapper}) => MSWWrapper)
+)
+
 const queryClient = new QueryClient();
 
 type RootLayoutProps = {
@@ -32,6 +39,7 @@ export default function RootLayout({children}: RootLayoutProps) {
   return (
     <html lang={"en"}>
     <body>
+
     <QueryClientProvider client={queryClient}>
       <LanguageContext.Provider value={language}>
         <TreesContext.Provider value={numberOfTrees}>
@@ -39,7 +47,9 @@ export default function RootLayout({children}: RootLayoutProps) {
             <SharedComponents.Header {...{changeLanguage}} />
           </header>
           <main>
-            {children}
+            <MSWWrapper>
+              {children}
+            </MSWWrapper>
           </main>
           <Container>
             <section>
@@ -52,6 +62,7 @@ export default function RootLayout({children}: RootLayoutProps) {
         </TreesContext.Provider>
       </LanguageContext.Provider>
     </QueryClientProvider>
+
     </body>
     </html>
   )

@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 
-import { fetchProjectById } from "../../api";
-import { Project } from "../../api/interfaces";
 import ProjectComponent, { ProjectProps } from "./project-component";
+import {Project} from "@/api/interfaces";
+import {fetchProjectById} from "@/api";
+
 
 interface IProjectQuery {
   data: Project;

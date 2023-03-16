@@ -1,4 +1,4 @@
-import { Language } from "../providers/context";
+import { Language } from "@/providers/context";
 
 export function withLanguageControls(
   CustomComponent: any,

@@ -6,8 +6,9 @@ import {debounce} from "lodash";
 
 import HomeComponent from "./home-component";
 import {LanguageContext} from "@/providers/context";
-import {searchByQueryAsync, wssBaseUrl} from "@/api";
+import {searchByQueryAsync} from "@/api";
 import {ResultQuery} from "@/api/interfaces";
+
 
 export default function Component() {
   const [counter, setCounter] = useState(0);

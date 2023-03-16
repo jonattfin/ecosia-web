@@ -1,15 +1,18 @@
-import { useRouter } from "next/router";
+'use client';
+
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useQuery } from "react-query";
 
-import { fetchProjects, fetchReports } from "../../api";
-import { LanguageContext } from "../../providers/context";
+import { fetchProjects, fetchReports } from "@/api";
+import { LanguageContext } from "@/providers/context";
 
 import BlogComponent, { BlogProps } from "./blog-component";
 
 export default function Component() {
   const router = useRouter();
-  const { id } = router.query;
+  // const { id } = router.query; // TODO
+  const id = "projects";
 
   const language = useContext(LanguageContext);
 
