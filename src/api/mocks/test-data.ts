@@ -1,4 +1,4 @@
-
+import _ from 'lodash';
 
 export const testData = {
   projects: [
@@ -46,5 +46,6 @@ export const testData = {
       month: "December",
       year: 2020
     },
-  ]
+  ],
+  queries: _.range(1, _.random(10, 100)).map(id => ({id, url: `url${id}`, snippet: `snippet${id}`, name: `name${id}`}))
 }

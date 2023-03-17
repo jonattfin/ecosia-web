@@ -1,16 +1,16 @@
-import { Grid } from "@mui/material";
-import React, { Fragment, SyntheticEvent, useState } from "react";
+import {Grid} from "@mui/material";
+import React, {Fragment, SyntheticEvent, useState} from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import styled from "@emotion/styled";
 
-import { AppColor, Image } from "../../shared-components";
+import {AppColor, Image} from "../../shared-components";
 import * as Images from "./components/images";
-import { Language } from "@/providers/context";
-import { ITranslationFunc, withTranslations } from "@/helpers";
-import { ProjectsComponent, ReportsComponent } from "./components";
+import {Language} from "@/providers/context";
+import {ITranslationFunc, withTranslations} from "@/helpers";
+import {ProjectsComponent, ReportsComponent} from "./components";
 import Link from "next/link";
-import { Project, ReportData } from "@/api/interfaces";
+import {Project, ReportData} from "@/api/interfaces";
 
 export interface BlogProps {
   projects: Project[];
@@ -23,14 +23,14 @@ interface BlogPropsWithTranslation extends BlogProps {
   t: ITranslationFunc;
 }
 
-const Component = ({ projects, t, reports, id }: BlogPropsWithTranslation) => {
+const Component = ({projects, t, reports, id}: BlogPropsWithTranslation) => {
   const [value, setValue] = useState(id);
 
   const handleChange = (_event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const imageProps = { width: 150, height: 0, alt: "something special" };
+  const imageProps = {width: 150, height: 0, alt: "something special"};
   imageProps.height = imageProps.width * 0.5;
 
   return (
@@ -42,11 +42,7 @@ const Component = ({ projects, t, reports, id }: BlogPropsWithTranslation) => {
         <Grid item xs={12} xl={6}>
           <LogoHeaderDiv>
             <LogoImageDiv>
-              <Link href={`/`}>
-                <a>
-                  <Image src={Images.LogoImage} {...imageProps} />
-                </a>
-              </Link>
+              <Image src={Images.LogoImage} {...imageProps} />
             </LogoImageDiv>
             <TitleHeader>Blog</TitleHeader>
           </LogoHeaderDiv>
@@ -58,13 +54,13 @@ const Component = ({ projects, t, reports, id }: BlogPropsWithTranslation) => {
               textColor="secondary"
               indicatorColor="secondary"
             >
-              <Tab value={0} label="Trees" />
-              <Tab value={1} label="Money" />
+              <Tab value={0} label="Trees"/>
+              <Tab value={1} label="Money"/>
             </Tabs>
           </ProjectsHeaderDiv>
-          <SeparatorDiv />
+          <SeparatorDiv/>
           <TabPanel index={0} value={value}>
-            <ProjectsComponent {...{ projects, t }} />
+            <ProjectsComponent {...{projects, t}} />
           </TabPanel>
           <TabPanel index={1} value={value}>
             <ReportsComponent
@@ -90,8 +86,8 @@ interface TabPanelProps {
 }
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index } = props;
-  if (value !== index) return <Fragment />;
+  const {children, value, index} = props;
+  if (value !== index) return <Fragment/>;
 
   return <div>{children}</div>;
 }

@@ -32,14 +32,12 @@ const models = {
     countryName: primaryKey(String),
     amount: Number
   },
-  // metadata: {
-  //   searches: manyOf("query")
-  // },
-  // query: {
-  //   url: String,
-  //   snippet: String,
-  //   name: String
-  // }
+  query: {
+    id: primaryKey(Number),
+    url: String,
+    snippet: String,
+    name: String
+  }
 }
 
 export const db = factory(models);

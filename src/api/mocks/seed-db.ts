@@ -18,4 +18,8 @@ export const seedDb = () => {
     db.report.create(report)
   );
 
+  testData.queries.forEach(query =>
+    db.query.create(query)
+  )
+
 }

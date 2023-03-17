@@ -58,7 +58,7 @@ const Component = ({
               endAdornment={<SearchIcon />}
             />
           </SearchFormControl>
-          {query && (
+          {query && data && (
             <SearchList data-test="searchList">
               {data.map((item, index) => (
                 <ListItem key={`d_${index}`} disablePadding>

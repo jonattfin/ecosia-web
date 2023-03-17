@@ -1,7 +1,7 @@
 import {Pagination, Stack} from "@mui/material";
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {ResultQuery} from "../../../api/interfaces";
+import {ResultQuery} from "../../../../api/interfaces";
 
 export interface SearchListProps {
   page: number;

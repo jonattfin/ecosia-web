@@ -1,20 +1,20 @@
-import { Button, Grid } from "@mui/material";
+import {Button, Grid} from "@mui/material";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 
-import { ITranslationFunc } from "@/helpers";
-import { useState } from "react";
-import { Project } from "@/api/interfaces";
+import {ITranslationFunc} from "@/helpers";
+import {useState} from "react";
+import {Project} from "@/api/interfaces";
 
 export interface ProjectsProps {
   projects: Project[];
   t: ITranslationFunc;
 }
 
-export default function Component({ projects, t }: ProjectsProps) {
+export default function Component({projects, t}: ProjectsProps) {
   const [shownId, setShownId] = useState(0);
 
   return (
@@ -33,20 +33,16 @@ export default function Component({ projects, t }: ProjectsProps) {
           onMouseLeave={() => setShownId(0)}
         >
           <div>
-            <ProjectImg src={project.imageUrl}></ProjectImg>
+            <ProjectImg src={project.imageUrl} alt={""}></ProjectImg>
             <TitleContainerDiv>
               <TitleParagraph>{project.scope}</TitleParagraph>
               {shownId === project.id && showMediaLinks(project)}
             </TitleContainerDiv>
             <SubtitleParagraph>{project.name}</SubtitleParagraph>
             <p>{project.description}</p>
-            <Link href={`/project/${project.id}`}>
-              <a>
-                <Button size="small" color="secondary">
-                  View
-                </Button>
-              </a>
-            </Link>
+            <Button size="small" color="secondary">
+              View
+            </Button>
           </div>
         </Grid>
       ))}
@@ -62,15 +58,15 @@ function showMediaLinks(project: Project) {
         rel="noreferrer"
         href={`https://twitter.com/intent/tweet?text=${project.name}`}
       >
-        <TwitterIcon color="primary" />
+        <TwitterIcon color="primary"/>
       </a>
 
       <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
-        <FacebookIcon color="primary" />
+        <FacebookIcon color="primary"/>
       </a>
 
       <a target="_blank" href="https://pinterest.com/" rel="noreferrer">
-        <PinterestIcon color="primary" />
+        <PinterestIcon color="primary"/>
       </a>
     </div>
   );
