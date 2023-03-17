@@ -62,7 +62,7 @@ export default function Component({
           &nbsp;
         </Grid>
         <Grid item xs={12} xl={6}>
-          {/*<Components.MapComponent {...{ counter, language }} />*/}
+          <Components.MapComponent {...{ counter, language }} />
         </Grid>
         <Grid item xl={3}>
           &nbsp;

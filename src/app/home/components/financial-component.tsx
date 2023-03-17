@@ -43,14 +43,14 @@ const Component = ({
           </PieContainerDiv>
         </Grid>
         <Grid item xs={12} xl={12}>
-          <LinkDiv>
-            <Link href="/blog/reports">
-              <a data-test="explore-reports">
-                {t("exploreReports")}
-                <ChevronRightIcon fontSize="small" />
-              </a>
-            </Link>
-          </LinkDiv>
+          {/*<LinkDiv>*/}
+          {/*  <Link href="/blog/reports">*/}
+          {/*    <a data-test="explore-reports">*/}
+          {/*      {t("exploreReports")}*/}
+          {/*      <ChevronRightIcon fontSize="small" />*/}
+          {/*    </a>*/}
+          {/*  </Link>*/}
+          {/*</LinkDiv>*/}
         </Grid>
       </Grid>
     </MainSection>

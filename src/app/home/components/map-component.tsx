@@ -41,13 +41,13 @@ const Component = ({ counter, t }: MapComponentProps) => {
           <ContentDiv>{t("activeProjects")}</ContentDiv>
         </Grid>
         <Grid item xs={12} xl={12}>
-          <LinkDiv>
-            <Link href="/blog/projects">
-              <a data-test="discover-projects">
-                {t("discover")} <ChevronRightIcon fontSize="small" />
-              </a>
-            </Link>
-          </LinkDiv>
+          {/*<LinkDiv>*/}
+          {/*  <Link href="/blog/projects">*/}
+          {/*    <a data-test="discover-projects">*/}
+          {/*      {t("discover")} <ChevronRightIcon fontSize="small" />*/}
+          {/*    </a>*/}
+          {/*  </Link>*/}
+          {/*</LinkDiv>*/}
         </Grid>
         <Grid item xs={12} xl={12}>
           &nbsp;

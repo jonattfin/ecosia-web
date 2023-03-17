@@ -1,9 +1,6 @@
-import {Project, ProjectMetadata, ReportData, ReportMetadata, ResultQuery, SearchMetadata} from "./interfaces";
+import {Project, ProjectMetadata, ReportData, ReportMetadata, SearchMetadata} from "./interfaces";
 
-const environment = getEnvironment();
-
-export const httpBaseUrl = environment.httpBaseUrl;
-export const wssBaseUrl = environment.wssBaseUrl;
+export const {httpBaseUrl} = getEnvironment();
 
 export const fetchProjects = async (): Promise<ProjectMetadata> => {
   const res = await fetch(`${httpBaseUrl}/projects`);
@@ -33,13 +30,10 @@ export const fetchReportById = async (
   const res = await fetch(`${httpBaseUrl}/reports/${reportId}`);
   return res.json();
 };
-
 export const fetchLastReport = async (): Promise<ReportData> => {
   const res = await fetch(`${httpBaseUrl}/reports/last`);
   return res.json();
 };
-
-
 export const searchByQueryAsync = async (
   query: string | undefined,
   size: number = 5,
@@ -50,25 +44,13 @@ export const searchByQueryAsync = async (
 };
 
 function getEnvironment(isDevelopment: boolean = true) {
-  return isDevelopment ? getDevEnvironment() : getProdEnvironment();
+  return getDevEnvironment();
 
   function getDevEnvironment() {
-    const baseUrl = "localhost:7131/api/v1";
+    const baseUrl = "http://localhost:3000/api/v1";
 
     return {
-      baseUrl,
-      httpBaseUrl: `https://${baseUrl}`,
-      wssBaseUrl: `ws://${baseUrl}`,
-    };
-  }
-
-  function getProdEnvironment() {
-    const baseUrl = "ecosia-clone.herokuapp.com";
-
-    return {
-      baseUrl,
-      httpBaseUrl: `https://${baseUrl}`,
-      wssBaseUrl: `wss://${baseUrl}`,
+      httpBaseUrl: baseUrl,
     };
   }
 }
