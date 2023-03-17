@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import {Grid} from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -8,15 +8,16 @@ import {
   MainTitleDiv,
   MainSubtitleDiv,
   LinkDiv,
+  Pie,
 } from "@/shared-components";
-import { Language } from "@/providers/context";
-import { ITranslationFunc, withTranslations } from "@/helpers";
-import { ReportData } from "@/api/interfaces";
+import {Language} from "@/providers/context";
+import {ITranslationFunc, withTranslations} from "@/helpers";
+import {ReportData} from "@/api/interfaces";
 
 const Component = ({
-  t,
-  report,
-}: {
+                     t,
+                     report,
+                   }: {
   t: ITranslationFunc;
   report: ReportData;
 }) => {
@@ -40,17 +41,18 @@ const Component = ({
         </Grid>
         <Grid item xs={6} xl={4}>
           <PieContainerDiv>
+            <Pie data={getPieData(report)}/>
           </PieContainerDiv>
         </Grid>
         <Grid item xs={12} xl={12}>
-          {/*<LinkDiv>*/}
-          {/*  <Link href="/blog/reports">*/}
-          {/*    <a data-test="explore-reports">*/}
-          {/*      {t("exploreReports")}*/}
-          {/*      <ChevronRightIcon fontSize="small" />*/}
-          {/*    </a>*/}
-          {/*  </Link>*/}
-          {/*</LinkDiv>*/}
+          <LinkDiv>
+            <Link href="blog?id=reports">
+              <>
+                {t("exploreReports")}
+                <ChevronRightIcon fontSize="small"/>
+              </>
+            </Link>
+          </LinkDiv>
         </Grid>
       </Grid>
     </MainSection>
@@ -58,7 +60,7 @@ const Component = ({
 };
 
 const getPieData = (report: ReportData) => {
-  return report.investmentsInCategories.map(({ categoryName, amount: value }) => {
+  return report.investmentsInCategories.map(({categoryName, amount: value}) => {
     return {
       id: categoryName,
       label: categoryName,

@@ -11,7 +11,7 @@ import _ from "lodash";
 
 import { ITranslationFunc } from "@/helpers";
 import { Grid } from "@mui/material";
-import { AppColor } from "@/shared-components";
+import { AppColor, Pie } from "@/shared-components";
 import React, { Fragment } from "react";
 import { ReportData } from "@/api/interfaces";
 
@@ -112,7 +112,7 @@ export default function Component({ t, reports }: ReportsProps) {
           <CardDiv>{t("treesFinanced")}</CardDiv>
         </Card>
         <PieContainerDiv>
-          {/*<PieComponent data={getPieData()} />*/}
+          <Pie data={getPieData()} />
         </PieContainerDiv>
       </Grid>
       {currentReport.investmentsInCountries.length > 0 && (

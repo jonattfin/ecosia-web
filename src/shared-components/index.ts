@@ -4,6 +4,7 @@ export { default as Footer } from "./footer";
 export { default as Header } from "./header";
 export { default as Links } from "./links";
 export { default as Image } from "./image";
+export { default as Pie } from './pie';
 
 // Shared Styled Components & other styles
 
