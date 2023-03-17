@@ -1,51 +1,27 @@
 import _ from 'lodash';
+import {loremIpsum} from "lorem-ipsum";
 
 export const testData = {
-  projects: [
-    {
-      id: 1,
-      name: "P1",
-      description: "D1",
-      title: "T1",
-      treesPlanted: "TP1",
-      hectaresRestored: "HR1",
-      yearSince: 2022,
-      imageUrl: "url 1",
-      tag: []
-    },
-    {
-      id: 2,
-      name: "P2",
-      description: "D2",
-      title: "T2",
-      treesPlanted: "TP2",
-      hectaresRestored: "HR2",
-      yearSince: 2023,
-      imageUrl: "url 2",
-      tag: []
-    },
-  ],
-  tags: [
-    {
-      id: 1,
-      title: "t1",
-      subtitle: "s1"
-    },
-    {
-      id: 2,
-      title: "t2",
-      subtitle: "s2"
-    },
-  ],
-  reports: [
-    {
-      month: "September",
-      year: 2020
-    },
-    {
-      month: "December",
-      year: 2020
-    },
-  ],
-  queries: _.range(1, _.random(10, 100)).map(id => ({id, url: `url${id}`, snippet: `snippet${id}`, name: `name${id}`}))
+  projects: _.range(1, 10)
+    .map((id) => ({
+      id,
+      name: `project_${id}`,
+      description: loremIpsum(),
+      title: `title_${id}`,
+      treesPlanted: 100,
+      hectaresRestored: 100,
+      yearSince: 2018,
+      imageUrl: 'url',
+      tags: []
+    })),
+  tags: _.range(1, 10)
+    .map(id => ({id, title: `title_${id}`, subtitle: `subtitle_${id}`})),
+  reports: _.range(1, 10)
+    .map(id => ({month: `month_${id}`, year: 2022, investmentsInCategories: [], investmentsInCountries: []})),
+  queries: _.range(1, _.random(10, 100))
+    .map(id => ({id, url: `url${id}`, snippet: `snippet${id}`, name: `name${id}`})),
+  categoryInvestment: _.range(1, 10)
+    .map(id => ({categoryName: `category_${id}`, amount: _.random(100, 1000)})),
+  countryInvestment: _.range(1, 10)
+    .map(id => ({countryName: `country_${id}`, amount: _.random(100, 1000)}))
 }

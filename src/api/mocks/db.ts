@@ -7,8 +7,8 @@ const models = {
     scope: String,
     description: String,
     title: String,
-    treesPlanted: String,
-    hectaresRestored: String,
+    treesPlanted: Number,
+    hectaresRestored: Number,
     yearSince: Number,
     imageUrl: String,
     tags: manyOf('tag')
