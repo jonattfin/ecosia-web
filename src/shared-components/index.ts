@@ -19,6 +19,7 @@ export const MainTitleDiv = styled.div`
   color: ${AppColor.Teal};
   text-transform: uppercase;
   padding: 10px 0;
+  text-align: center;
 `;
 
 export const MainSubtitleDiv = styled.div`

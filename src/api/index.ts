@@ -8,7 +8,7 @@ export const fetchProjects = async (): Promise<ProjectMetadata> => {
 };
 
 export const fetchProjectById = async (
-  projectId: string | string[] | undefined
+  projectId: string | Number
 ): Promise<Project> => {
   const res = await fetch(`${httpBaseUrl}/projects/${projectId}`);
   return res.json();

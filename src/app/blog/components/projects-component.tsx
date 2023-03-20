@@ -9,7 +9,7 @@ import {ITranslationFunc} from "@/helpers";
 import {useState} from "react";
 import {Project} from "@/api/interfaces";
 
-export interface ProjectsProps {
+export type ProjectsProps = {
   projects: Project[];
   t: ITranslationFunc;
 }
@@ -40,9 +40,7 @@ export default function Component({projects, t}: ProjectsProps) {
             </TitleContainerDiv>
             <SubtitleParagraph>{project.name}</SubtitleParagraph>
             <p>{project.description}</p>
-            <Button size="small" color="secondary">
-              View
-            </Button>
+            <Link href={`project?id=${project.id}`}>View</Link>
           </div>
         </Grid>
       ))}

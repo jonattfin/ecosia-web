@@ -1,35 +1,36 @@
-import { Grid } from "@mui/material";
+import {Grid} from "@mui/material";
 import styled from "@emotion/styled";
 import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import Image from "next/image";
 
 import * as Images from "./images";
-import { AppColor } from "@/shared-components";
-import { Language } from "@/providers/context";
-import { ITranslationFunc, withTranslations } from "@/helpers";
+import {AppColor} from "@/shared-components";
+import {Language} from "@/providers/context";
+import {ITranslationFunc, withTranslations} from "@/helpers";
 
-const Component = ({ t }: { t: ITranslationFunc }) => {
+const Component = ({t}: { t: ITranslationFunc }) => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} xl={12}>
         <DivContainer>
           <AboveTitle>{t("weProtectYourPrivacy")}</AboveTitle>
           <Subtitle>
-            {t("needsProtection")} <br /> {t("doBoth")}
+            {t("needsProtection")} <br/> {t("doBoth")}
           </Subtitle>
           <div>
             <a href="#statements">
-              <ArrowDropDownCircleIcon fontSize="large" />
+              <ArrowDropDownCircleIcon fontSize="large"/>
             </a>
           </div>
         </DivContainer>
       </Grid>
-      <Grid item xs={12} xl={12}>
+      <Grid item xs={3} xl={3}></Grid>
+      <Grid item xs={6} xl={6}>
         <DivChildContainer id="statements">
-          {getStatements().map(({ title, content, image }, index) => (
+          {getStatements().map(({title, content, image}, index) => (
             <DivContent key={`statement_${index}`}>
               <div>
-                <Image src={image} alt="tldr" />
+                <CenteredImage src={image} alt="tldr"/>
               </div>
               <div>
                 <DivTitle>{t(title)}</DivTitle>
@@ -39,6 +40,7 @@ const Component = ({ t }: { t: ITranslationFunc }) => {
           ))}
         </DivChildContainer>
       </Grid>
+      <Grid item xs={3} xl={3}></Grid>
     </Grid>
   );
 };
@@ -105,13 +107,16 @@ const Subtitle = styled.div`
 
 const DivContent = styled.div`
   text-align: center;
-  padding: 3% 15%;
 `;
 
 const DivTitle = styled.div`
   text-transform: capitalize;
   font-size: larger;
   padding-bottom: 10px;
+`;
+
+const CenteredImage = styled(Image)`
+  text-align: center;
 `;
 
 // translations

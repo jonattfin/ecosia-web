@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-import { withLanguageControls } from "@/helpers";
+import { withLanguageControls } from "../../helpers";
 import BlogComponent, { BlogProps } from "./blog-component";
 
 export default function Index() {

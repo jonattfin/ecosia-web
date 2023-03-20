@@ -1,18 +1,17 @@
 'use client';
 
-import { useRouter } from "next/navigation";
-import { useContext } from "react";
-import { useQuery } from "react-query";
+import {useSearchParams} from "next/navigation";
+import {useContext} from "react";
+import {useQuery} from "react-query";
 
-import { fetchProjects, fetchReports } from "@/api";
-import { LanguageContext } from "@/providers/context";
+import {fetchProjects, fetchReports} from "@/api";
+import {LanguageContext} from "@/providers/context";
 
-import BlogComponent, { BlogProps } from "./blog-component";
+import BlogComponent, {BlogProps} from "./blog-component";
 
 export default function Component() {
-  const router = useRouter();
-  // const { id } = router.query; // TODO
-  const id = "projects";
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id') || "projects";
 
   const language = useContext(LanguageContext);
 
@@ -33,7 +32,7 @@ export default function Component() {
     return "An error has occurred...";
 
   const props: BlogProps = {
-    projects : projectsData.projects,
+    projects: projectsData.projects,
     reports: [...reportsData.reports],
     language,
     id: id == "projects" ? 0 : 1,

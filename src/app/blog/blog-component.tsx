@@ -12,7 +12,7 @@ import {ProjectsComponent, ReportsComponent} from "./components";
 import Link from "next/link";
 import {Project, ReportData} from "@/api/interfaces";
 
-export interface BlogProps {
+export type BlogProps = {
   projects: Project[];
   reports: ReportData[];
   language: string;

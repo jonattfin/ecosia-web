@@ -1,20 +1,22 @@
-import { useRouter } from "next/router";
-import { useQuery } from "react-query";
+'use client';
 
-import ProjectComponent, { ProjectProps } from "./project-component";
+import {useSearchParams} from "next/navigation";
+import {useQuery} from "react-query";
+
+import ProjectComponent, {ProjectProps} from "./project-component";
 import {Project} from "@/api/interfaces";
 import {fetchProjectById} from "@/api";
 
 
-interface IProjectQuery {
+type IProjectQuery = {
   data: Project;
   isLoading: boolean;
   error: any;
 }
 
-export default function Index() {
-  const { query } = useRouter();
-  const { id } = query;
+export default function Page() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id') || 0;
 
   const {
     data: project,

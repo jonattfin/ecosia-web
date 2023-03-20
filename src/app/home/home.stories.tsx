@@ -4,7 +4,7 @@ import { range, random } from "lodash";
 import HomeComponent from "./home-component";
 
 import * as Components from "./components";
-import { withLanguageControls } from "@/helpers";
+import { withLanguageControls } from "../../helpers";
 import { ReportData } from "@/api/interfaces";
 
 export default function Index() {

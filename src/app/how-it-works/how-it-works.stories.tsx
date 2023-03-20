@@ -1,5 +1,5 @@
 import HowItWorksPage from "./how-it-works-component";
-import { withLanguageControls } from "@/helpers";
+import { withLanguageControls } from "../../helpers";
 import * as Components from "./components";
 
 export default function Index() {

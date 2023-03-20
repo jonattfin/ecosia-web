@@ -18,17 +18,9 @@ export const handlers = [
 
   rest.get(`${httpBaseUrl}/projects/:projectId`, (req, res, ctx) => {
     const {projectId} = req.params;
+    const projects = db.project.getAll();
 
-    const query = {
-      where: {
-        id: {
-          equals: projectId
-        }
-      }
-    };
-
-    const json = {};
-    // const json = db.project.findFirst(query);
+    const json = _.find(projects, p => p.id === parseInt(projectId.toString()));
 
     return res(
       ctx.status(200),

@@ -6,7 +6,7 @@ import Link from "next/link";
 import _ from "lodash";
 import styled from "@emotion/styled";
 
-import { AppColor, Image } from "../../../shared-components";
+import { AppColor, Image } from "../../shared-components";
 import * as Images from "./images";
 import { Project, Tag } from "@/api/interfaces";
 
@@ -41,7 +41,7 @@ export default function Component({ project }: ProjectProps) {
           <ProjectsHeaderDiv>
             <Breadcrumbs aria-label="breadcrumb">
               <Link href="/">Home</Link>
-              <Link href="/blog/projects">Projects</Link>
+              <Link href="/blog?id=projects">Projects</Link>
               <Typography color="textPrimary">{project.name}</Typography>
             </Breadcrumbs>
           </ProjectsHeaderDiv>
