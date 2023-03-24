@@ -66,7 +66,10 @@ export const handlers = [
     const size = searchParams.get('size');
 
     const json = {
-      searches: db.query.findMany({})
+      page: parseInt(page || "") ,
+      size: parseInt(size || ""),
+      count: 20,
+      searches: db.query.findMany({}).map(item => ({...item, name: `${item.name} ${text}`}))
     };
 
     return res(

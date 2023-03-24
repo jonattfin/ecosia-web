@@ -1,7 +1,7 @@
 import {Pagination, Stack} from "@mui/material";
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {ResultQuery} from "../../../../api/interfaces";
+import {ResultQuery} from "@/api/interfaces";
 
 export interface SearchListProps {
   page: number;
@@ -17,14 +17,19 @@ export default function Component({
                                     searches,
                                   }: SearchListProps) {
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const data = showWindow(searches, PAGE_SIZE, currentPage);
+  const numberOfPages = parseInt((searches.length / PAGE_SIZE).toString(), 10);
+
   const handleChange = (_ev: any, value: number) => {
-    console.log(value)
+    setCurrentPage(value)
   };
 
   return (
     <ExtraSection>
       <Stack spacing={2}>
-        {searches.map(({url, snippet, name}, index) => (
+        {data.map(({url, snippet, name}, index) => (
           <div key={`index_${index}`}>
             <NameDiv>
               <a href={url} target="_blank" rel="noreferrer">
@@ -45,8 +50,8 @@ export default function Component({
         <Pagination
           variant="outlined"
           color="primary"
-          count={count / size}
-          page={page}
+          count={numberOfPages}
+          page={currentPage}
           onChange={handleChange}
         />
       </div>
@@ -54,7 +59,7 @@ export default function Component({
   );
 }
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 10;
 
 function showWindow(data: Array<any>, pageSize: number, pageNumber = 1) {
   return data.filter((_v, index) => {
@@ -67,7 +72,7 @@ function showWindow(data: Array<any>, pageSize: number, pageNumber = 1) {
 // Styled Components
 
 const ExtraSection = styled.section`
-  margin: 25px 0px;
+  margin: 25px 0;
 `;
 
 const NameDiv = styled.div`

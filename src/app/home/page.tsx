@@ -21,7 +21,7 @@ export default function Component() {
   };
 
   const router = useRouter();
-  const onSearchValueSelected = (q: string) => router.push(`/search/${q}`);
+  const onSearchValueSelected = (q: string) => router.push(`/search?q=${q}`);
 
   useEffect(() => {
     async function fetchData() {

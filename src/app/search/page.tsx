@@ -1,7 +1,7 @@
 'use client';
 
 import {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
+import {useSearchParams, useRouter} from "next/navigation";
 import {debounce} from "lodash";
 
 import SearchComponent, {SearchProps} from "./search-component";
@@ -19,9 +19,8 @@ type ResultsState = {
 }
 
 export default function Component({}: IndexSearchProps) {
-  const router = useRouter();
-  // const {id} = router.query; // TODO
-  const id = 1;
+  const searchParams = useSearchParams();
+  const q = searchParams.get('q');
 
   const [resultsObject, setResultsObject] = useState<ResultsState>({
     page: 1,
@@ -32,29 +31,33 @@ export default function Component({}: IndexSearchProps) {
 
   const [progress, setProgress] = useState(false);
 
+  const router = useRouter();
+
   const doSearch = (query: string) => {
     console.log(query);
-    router.push(`/search/${query}`);
+    router.push(`/search?q=${query}`);
   };
 
   useEffect(() => {
     const fetchData = async () => {
       setProgress(true);
-      const data = await searchByQueryAsync(id?.toString());
+
+      const data = await searchByQueryAsync(q?.toString());
+
       setResultsObject(data);
       setProgress(false);
     };
 
-    if (id) {
+    if (q) {
       fetchData()
         .catch(reason => console.error(reason));
     }
 
     // incrementTreeCount(); // TODO
-  }, [id]);
+  }, [q]);
 
   const props: SearchProps = {
-    query: (id || "").toString(),
+    query: (q || "").toString(),
     resultsObject,
     doSearch: debounce(doSearch, 200),
     progress,

@@ -21,13 +21,13 @@ export default function Component(props: SearchProps) {
     <MainSection>
       <Stack direction="row" spacing={2}>
         <Link href="/">
-          <a>
-            <ExtraDiv />
-            <Image
-              src={Images.LogoImage}
-              alt="logo"
-            />
-          </a>
+          {/*<a>*/}
+          {/*  <ExtraDiv />*/}
+          {/*  <Image*/}
+          {/*    src={Images.LogoImage}*/}
+          {/*    alt="logo"*/}
+          {/*  />*/}
+          {/*</a>*/}
         </Link>
         <ExtraPadding>
           <FormControl size="small" variant="outlined">
