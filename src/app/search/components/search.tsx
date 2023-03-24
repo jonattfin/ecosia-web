@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 
 import * as Images from "./images";
 
-export interface SearchProps {
+export type SearchProps = {
   query: string;
   doSearch: (query: string) => void;
 }

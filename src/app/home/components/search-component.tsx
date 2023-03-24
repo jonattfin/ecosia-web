@@ -16,7 +16,7 @@ import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 import { ResultQuery } from "@/api/interfaces";
 
-export interface SearchComponentProps {
+export type SearchComponentProps = {
   onSearch: (query: string) => void;
   onSearchValueSelected: (query: string) => void;
   q: string;

@@ -10,7 +10,7 @@ import { AppColor, Image } from "../../shared-components";
 import * as Images from "./images";
 import { Project, Tag } from "@/api/interfaces";
 
-export interface ProjectProps {
+export type ProjectProps = {
   project: Project;
 }
 

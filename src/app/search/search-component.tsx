@@ -8,7 +8,7 @@ import {
 
 import * as Components from "./components";
 
-export interface SearchProps {
+export type SearchProps = {
   query: string;
   doSearch: (query: string) => void;
   progress: boolean;

@@ -11,7 +11,7 @@ import {
 import { Language } from "@/providers/context";
 import { ITranslationFunc, withTranslations } from "@/helpers";
 
-export interface MapComponentProps {
+export type MapComponentProps = {
   counter: number;
   t: ITranslationFunc;
 }

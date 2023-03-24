@@ -3,7 +3,7 @@ import {useState} from "react";
 import styled from "@emotion/styled";
 import {ResultQuery} from "@/api/interfaces";
 
-export interface SearchListProps {
+export type SearchListProps = {
   page: number;
   size: number;
   count: number;

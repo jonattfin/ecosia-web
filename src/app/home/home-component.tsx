@@ -7,7 +7,7 @@ import { AppColor } from "@/shared-components";
 import { Language } from "@/providers/context";
 import { ResultQuery } from "@/api/interfaces";
 
-export interface HomeComponentProps {
+export type HomeComponentProps = {
   q: string;
   counter: number;
   language?: Language;
