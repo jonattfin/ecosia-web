@@ -19,15 +19,12 @@ export default function Component({projects, t}: ProjectsProps) {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} xl={12}>
+      <Grid size={12}>
         <ProjectsDescriptionDiv>{t("treePlanting")}</ProjectsDescriptionDiv>
       </Grid>
       {projects.map((project) => (
         <Grid
-          item
-          xs={12}
-          lg={6}
-          xl={4}
+          size={{xs:12, xl:4, lg:6}}
           key={project.id}
           onMouseEnter={() => setShownId(project.id)}
           onMouseLeave={() => setShownId(0)}

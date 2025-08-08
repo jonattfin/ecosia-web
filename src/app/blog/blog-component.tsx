@@ -36,10 +36,10 @@ const Component = ({projects, t, reports, id}: BlogPropsWithTranslation) => {
   return (
     <MainContainer>
       <Grid container spacing={2}>
-        <Grid item xs={12} xl={3}>
+        <Grid size={{xs:12, xl:3}}>
           &nbsp;
         </Grid>
-        <Grid item xs={12} xl={6}>
+        <Grid size={{xs:12, xl:6}}>
           <LogoHeaderDiv>
             <LogoImageDiv>
               <Image src={Images.LogoImage} {...imageProps} />
@@ -71,7 +71,7 @@ const Component = ({projects, t, reports, id}: BlogPropsWithTranslation) => {
             />
           </TabPanel>
         </Grid>
-        <Grid item xs={12} xl={3}>
+        <Grid size={{xs:12, xl:3}}>
           &nbsp;
         </Grid>
       </Grid>

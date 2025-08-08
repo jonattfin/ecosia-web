@@ -1,7 +1,3 @@
-import { action } from "@storybook/addon-actions";
-import { range, random } from "lodash";
-
-import HomeComponent from "./home-component";
 
 import * as Components from "./components";
 import { withLanguageControls } from "../../helpers";
@@ -14,7 +10,7 @@ export default function Index() {
 export const SearchComponent = withLanguageControls(
   Components.SearchComponent,
   {
-    onSearch: action("onSearch"),
+    onSearch: () => {},
     counter: 100,
   }
 );

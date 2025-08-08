@@ -19,8 +19,7 @@ type ResultsState = {
 }
 
 export default function Component({}: IndexSearchProps) {
-  const searchParams = useSearchParams();
-  const q = searchParams.get('q');
+  const q = "a";
 
   const [resultsObject, setResultsObject] = useState<ResultsState>({
     page: 1,

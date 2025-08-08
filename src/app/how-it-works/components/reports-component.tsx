@@ -13,7 +13,7 @@ const Component = ({ t }: { t: ITranslationFunc }) => {
   return (
     <section>
       <Grid container spacing={2}>
-        <Grid item xs={12} xl={12}>
+        <Grid size={12}>
           <ContainerDiv>
             <div>
               <Image

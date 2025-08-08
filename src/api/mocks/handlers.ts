@@ -1,69 +1,54 @@
-import {rest} from 'msw';
+import {http, HttpResponse} from 'msw';
 import _ from 'lodash';
 
 import {db} from './db';
 import {httpBaseUrl} from "@/api";
 
 export const handlers = [
-  rest.get(`${httpBaseUrl}/projects`, (req, res, ctx) => {
+  http.get(`${httpBaseUrl}/projects`, ({request}) => {
     const json = {
       projects: db.project.getAll()
     };
 
-    return res(
-      ctx.status(200),
-      ctx.json(json)
-    )
+    return HttpResponse.json(json);
   }),
 
-  rest.get(`${httpBaseUrl}/projects/:projectId`, (req, res, ctx) => {
-    const {projectId} = req.params;
+  http.get(`${httpBaseUrl}/projects/:projectId`, ({params}) => {
+    const {projectId} = params;
     const projects = db.project.getAll();
 
-    const json = _.find(projects, p => p.id === parseInt(projectId.toString()));
+    const json = _.find(projects, p => p.id === parseInt(projectId as string));
 
-    return res(
-      ctx.status(200),
-      ctx.json(json)
-    )
+    return HttpResponse.json(json);
   }),
 
-  rest.get(`${httpBaseUrl}/tags`, (req, res, ctx) => {
+  http.get(`${httpBaseUrl}/tags`, ({request}) => {
     const json = db.tag.getAll();
 
-    return res(
-      ctx.status(200),
-      ctx.json(json)
-    )
+    return HttpResponse.json(json);
   }),
 
-  rest.get(`${httpBaseUrl}/reports`, (req, res, ctx) => {
+  http.get(`${httpBaseUrl}/reports`, ({request}) => {
 
     const json = {
       reports: db.report.getAll()
     };
 
-    return res(
-      ctx.status(200),
-      ctx.json(json)
-    )
+    return HttpResponse.json(json);
   }),
 
-  rest.get(`${httpBaseUrl}/reports/last`, (req, res, ctx) => {
+  http.get(`${httpBaseUrl}/reports/last`, (req) => {
     const reports = db.report.getAll();
-    return res(
-      ctx.status(200),
-      ctx.json(_.last(reports)),
-    )
+    return HttpResponse.json(reports);
   }),
 
-  rest.get(`${httpBaseUrl}/search`, (req, res, ctx) => {
+  http.get(`${httpBaseUrl}/search`, ({request}) => {
 
-    const searchParams = req.url.searchParams;
+    const url = new URL(request.url);
 
-    const text = searchParams.get('text');
-    const page = searchParams.get('page');
-    const size = searchParams.get('size');
+    const text = url.searchParams.get('text');
+    const page = url.searchParams.get('page');
+    const size = url.searchParams.get('size');
 
     const json = {
       page: parseInt(page || "") ,
@@ -72,9 +57,6 @@ export const handlers = [
       searches: db.query.findMany({}).map(item => ({...item, name: `${item.name} ${text}`}))
     };
 
-    return res(
-      ctx.status(200),
-      ctx.json(json),
-    )
+    return HttpResponse.json(json);
   }),
 ]

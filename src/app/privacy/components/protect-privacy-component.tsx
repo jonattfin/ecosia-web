@@ -11,7 +11,7 @@ import {ITranslationFunc, withTranslations} from "@/helpers";
 const Component = ({t}: { t: ITranslationFunc }) => {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} xl={12}>
+      <Grid size={12}>
         <DivContainer>
           <AboveTitle>{t("weProtectYourPrivacy")}</AboveTitle>
           <Subtitle>
@@ -24,8 +24,8 @@ const Component = ({t}: { t: ITranslationFunc }) => {
           </div>
         </DivContainer>
       </Grid>
-      <Grid item xs={3} xl={3}></Grid>
-      <Grid item xs={6} xl={6}>
+      <Grid size={3}></Grid>
+      <Grid size={6}>
         <DivChildContainer id="statements">
           {getStatements().map(({title, content, image}, index) => (
             <DivContent key={`statement_${index}`}>
@@ -40,7 +40,7 @@ const Component = ({t}: { t: ITranslationFunc }) => {
           ))}
         </DivChildContainer>
       </Grid>
-      <Grid item xs={3} xl={3}></Grid>
+      <Grid size={3}></Grid>
     </Grid>
   );
 };

@@ -27,10 +27,10 @@ export default function Component({ project }: ProjectProps) {
   return (
     <MainContainerDiv>
       <Grid container spacing={2}>
-        <Grid item xs={12} xl={3}>
+        <Grid size={{xs:12, xl:3}}>
           &nbsp;
         </Grid>
-        <Grid item xs={12} xl={6}>
+        <Grid size={{xs:12, xl:6}}>
           <LogoHeaderDiv>
             <LogoImageDiv>
               <Image src={Images.LogoImage} {...logoimageProps} />
@@ -49,32 +49,32 @@ export default function Component({ project }: ProjectProps) {
           <ProjectContainerDiv>
             <img src={project.imageUrl} alt="something special" ></img>
             <Grid container justifyContent="center" alignItems="center">
-              <Grid item xs={12} xl={4}>
+              <Grid size={{xs:12, xl:4}}>
                 <p>trees planted</p>
                 <TealParagraph>{project.treesPlanted}</TealParagraph>
               </Grid>
-              <Grid item xs={12} xl={4}>
+              <Grid size={{xs:12, xl:4}}>
                 <p>hectares restored</p>
                 <OrangeParagraph>{project.hectaresRestored}</OrangeParagraph>
               </Grid>
-              <Grid item xs={12} xl={4}>
+              <Grid size={{xs:12, xl:4}}>
                 <p>since</p>
                 <GreenParagraph>{project.yearSince}</GreenParagraph>
               </Grid>
-              <Grid item xs={12} xl={12}>
+              <Grid size={12}>
                 <h1>{project.title}</h1>
               </Grid>
-              <Grid item xs={12} xl={6}>
+              <Grid size={{xs:12, xl:6}}>
                 <p>{project.description}</p>
               </Grid>
-              <Grid item xs={12} xl={6}>
+              <Grid size={{xs:12, xl:6}}>
                 <Image src={Images.CountryMapImage} {...imageProps}></Image>
               </Grid>
               {showTags(project.tags)}
             </Grid>
           </ProjectContainerDiv>
         </Grid>
-        <Grid item xs={12} xl={3}>
+        <Grid size={{xs:12, xl:3}}>
           &nbsp;
         </Grid>
       </Grid>
@@ -86,7 +86,7 @@ function showTags(tags: Tag[] = []) {
   return (
     <React.Fragment>
       {tags.map((tag, index) => (
-        <Grid item xs={12} xl={4} key={`tag-${index}`}>
+        <Grid size={{xs:12, xl:4}} key={`tag-${index}`}>
           {renderImage(tag.title)}
           <p>{tag.title}</p>
           <p>{tag.subtitle}</p>

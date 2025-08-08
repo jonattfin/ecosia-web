@@ -25,10 +25,10 @@ export default function Component({
 
   return (
     <Grid container>
-      <Grid item xl={4}>
+      <Grid size={4}>
         &nbsp;
       </Grid>
-      <Grid item xs={12} xl={4}>
+      <Grid size={{xs:12, xl:4}}>
         <section>
           <Components.Search {...{ query, doSearch }} />
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -41,7 +41,7 @@ export default function Component({
           {showResults(value, progress, resultsObject)}
         </section>
       </Grid>
-      <Grid item xl={4}></Grid>
+      <Grid size={6}></Grid>
     </Grid>
   );
 }

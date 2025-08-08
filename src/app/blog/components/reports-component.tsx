@@ -45,7 +45,7 @@ export default function Component({ t, reports }: ReportsProps) {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={4} xl={4}>
+      <Grid size={4}>
         <InputLabel id="month-select-label">Month</InputLabel>
         <Select
           labelId="month-select-label"
@@ -67,7 +67,7 @@ export default function Component({ t, reports }: ReportsProps) {
           <SubtitleParagraph>{t("aboutTransparency")}</SubtitleParagraph>
         </CenteredContainerDiv>
       </Grid>
-      <Grid item xs={4} xl={4}>
+      <Grid size={4}>
         <Card variant="outlined">
           <CardContent>
             <CardDiv>
@@ -93,7 +93,7 @@ export default function Component({ t, reports }: ReportsProps) {
           })}
         </CenteredContainerDiv>
       </Grid>
-      <Grid item xs={4} xl={4}>
+      <Grid size={4}>
         <Card variant="outlined">
           <CardContent>
             <CardDiv>
@@ -116,7 +116,7 @@ export default function Component({ t, reports }: ReportsProps) {
         </PieContainerDiv>
       </Grid>
       {currentReport.investmentsInCountries.length > 0 && (
-        <Grid item xs={4} xl={4}>
+        <Grid size={4}>
           <CenteredContainerDiv>
             Countries:
             {currentReport.investmentsInCountries.map(({ countryName, amount }) => {
