@@ -1,6 +1,5 @@
 import {db} from './db';
 import {testData} from "@/api/mocks/test-data";
-import {any} from "prop-types";
 
 export const seedDb = () => {
   if (db.project.count() > 0) {
