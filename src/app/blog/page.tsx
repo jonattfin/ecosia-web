@@ -10,7 +10,8 @@ import {LanguageContext} from "@/providers/context";
 import BlogComponent, {BlogProps} from "./blog-component";
 
 export default function Component() {
-  const id = "projects";
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id') || "projects";
 
   const language = useContext(LanguageContext);
 

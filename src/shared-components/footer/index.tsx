@@ -11,7 +11,7 @@ export default function Component() {
   return (
     <div>
       <Grid container spacing={2}>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <LineDiv />
           <SocialContainerDiv>
             <FacebookRounded />
@@ -20,7 +20,7 @@ export default function Component() {
             <PianoRounded />
           </SocialContainerDiv>
         </Grid>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <ExplanationDiv>
             Ecosia GmbH does not assume responsibility for the content of sites
             to which it links and the way in which search results are displayed.

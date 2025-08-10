@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 import { Button, Grid } from "@mui/material";
-import { ITranslationFunc, withTranslations } from "@/helpers";
-import { Language } from "@/providers/context";
+import { ITranslationFunc, withTranslations } from "../../../helpers";
+import { Language } from "../../../providers/context";
 
-import { MainTitleDiv } from "@/shared-components";
+import { MainTitleDiv } from "../../../shared-components";
 
 const Component = ({ t }: { t: ITranslationFunc }) => {
   return (
     <section>
       <Grid container spacing={2}>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <ContainerDiv>
             <MainTitleDiv data-test="banner-title">
               {t("weBelive")}

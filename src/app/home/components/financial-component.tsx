@@ -24,7 +24,7 @@ const Component = ({
   return (
     <MainSection>
       <Grid container spacing={2}>
-        <Grid size={6}>
+        <Grid item xs={6} xl={6}>
           <MainTitleDiv data-test="reports-title">
             {t("monthlyReports")}
           </MainTitleDiv>
@@ -36,15 +36,15 @@ const Component = ({
           </MainSubtitleDiv>
           <ContentDiv>{t("reportsDescription")}</ContentDiv>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={0} xl={2}>
           &nbsp;
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6} xl={4}>
           <PieContainerDiv>
             <Pie data={getPieData(report)}/>
           </PieContainerDiv>
         </Grid>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <LinkDiv>
             <Link href="blog?id=reports">
               <>

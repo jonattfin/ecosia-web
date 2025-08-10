@@ -17,55 +17,55 @@ export default function Component({ language }: { language?: Language }) {
       </Head>
       <Grid container>
         {/* section */}
-        <BlueGrid size={12}>
+        <BlueGrid item xs={12} xl={12}>
           <Components.BannerComponent {...{ language }} />
         </BlueGrid>
         {/* section */}
 
         {/* section */}
-        <GreyGrid size={3}>
+        <GreyGrid item xl={3}>
           &nbsp;
         </GreyGrid>
-        <GreyGrid size={{xs:12, xl:6}}>
+        <GreyGrid item xs={12} xl={6}>
           <Components.SocialBusinessComponent {...{ language }} />
         </GreyGrid>
-        <GreyGrid size={3}>
+        <GreyGrid item xl={3}>
           &nbsp;
         </GreyGrid>
         {/* section */}
 
         {/* section */}
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
-        <Grid size={{xs:12, xl:6}}>
+        <Grid item xs={12} xl={6}>
           <Components.MeetTheTeamComponent {...{ language }} />
         </Grid>
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
         {/* section */}
 
         {/* section */}
-        <GreyGrid size={3}>
+        <GreyGrid item xl={3}>
           &nbsp;
         </GreyGrid>
-        <GreyGrid size={{xs:12, xl:6}}>
+        <GreyGrid item xs={12} xl={6}>
           <Components.HireComponent {...{ language }} />
         </GreyGrid>
-        <GreyGrid size={3}>
+        <GreyGrid item xl={3}>
           &nbsp;
         </GreyGrid>
         {/* section */}
 
         {/* section */}
-        <Grid size={4}>
+        <Grid item xl={4}>
           &nbsp;
         </Grid>
-        <Grid size={{xs:12, xl:4}}>
+        <Grid item xs={12} xl={4}>
           <Components.ContactUsComponent {...{ language }} />
         </Grid>
-        <Grid size={4}>
+        <Grid item xl={4}>
           &nbsp;
         </Grid>
         {/* section */}

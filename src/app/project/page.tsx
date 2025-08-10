@@ -1,9 +1,12 @@
 'use client';
+
+import {useSearchParams} from "next/navigation";
 import {useQuery} from "react-query";
 
 import ProjectComponent, {ProjectProps} from "./project-component";
 import {Project} from "@/api/interfaces";
 import {fetchProjectById} from "@/api";
+
 
 type ProjectQuery = {
   data: Project;
@@ -12,7 +15,8 @@ type ProjectQuery = {
 }
 
 export default function Page() {
-  const id = 0;
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id') || 0;
 
   const {
     data: project,

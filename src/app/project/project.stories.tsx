@@ -1,10 +1,22 @@
+import { ComponentStory } from "@storybook/react";
 import _ from 'lodash';
 import { loremIpsum } from "lorem-ipsum";
 import { Project } from "@/api/interfaces";
 
+import ProjectComponent from "./project-component";
+
 export default function Index() {
   return <div></div>;
 }
+
+const ProjectPageTemplate: ComponentStory<typeof ProjectComponent> = (args) => (
+  <ProjectComponent {...args} />
+);
+
+export const SearchComponent = ProjectPageTemplate.bind({});
+SearchComponent.args = {
+  ...getProjectAndTags(),
+};
 
 function getProjectAndTags() {
   const project: Project = {

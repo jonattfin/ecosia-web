@@ -8,7 +8,7 @@ export default function Links() {
   return (
     <MainDiv>
       <Grid container spacing={2}>
-        <Grid size={2}>
+        <Grid item xs={2} xl={2}>
           <div>
             <LogoImage
               src={images.corporationImage}
@@ -16,7 +16,7 @@ export default function Links() {
             ></LogoImage>
           </div>
         </Grid>
-        <Grid size={8}>
+        <Grid item xs={8} xl={8}>
           <ContainerDiv>
             <div>
               <TitleDiv>SITEMAP</TitleDiv>
@@ -79,7 +79,7 @@ export default function Links() {
             </div>
           </ContainerDiv>
         </Grid>
-        <Grid size={2}>
+        <Grid item xs={2} xl={2}>
           <TitleDiv>Apps</TitleDiv>
           <div>
             <LogoImage src={images.appStoreImage} alt="app store" />

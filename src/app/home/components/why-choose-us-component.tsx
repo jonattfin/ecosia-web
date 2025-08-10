@@ -20,47 +20,47 @@ const Component = ({ t }: { t: ITranslationFunc }) => {
   return (
     <section>
       <Grid container spacing={2}>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <MainTitleDiv>{t("why")}</MainTitleDiv>
           <MainSubtitleDiv>{t("wePutPeople")}</MainSubtitleDiv>
         </Grid>
-        <Grid size={{md:12, xl:2}}>
+        <Grid item md={12} xl={2}>
           <Image src={Images.ProfitsImage} alt="profits" {...imageProps} />
         </Grid>
-        <Grid size={{md:12, xl:4}}>
+        <Grid item md={12} xl={4}>
           <ContainerDiv>
             <TitleDiv>{t("notForProfit")}</TitleDiv>
             <div>{t("weDedicate")}</div>
           </ContainerDiv>
         </Grid>
-        <Grid size={{md:12, xl:2}}>
+        <Grid item md={12} xl={2}>
           <Image src={Images.PrivacyImage} alt="privacy" {...imageProps} />
         </Grid>
-        <Grid size={{md:12, xl:4}}>
+        <Grid item md={12} xl={4}>
           <ContainerDiv>
             <TitleDiv>{t("isPoweredByRenewable")}</TitleDiv>
             <div>{t("ourSolarPanels")}</div>
           </ContainerDiv>
         </Grid>
-        <Grid size={{md:12, xl:2}}>
+        <Grid item md={12} xl={2}>
           <Image src={Images.WorldImage} alt="world" {...imageProps} />
         </Grid>
-        <Grid size={{md:12, xl:4}}>
+        <Grid item md={12} xl={4}>
           <ContainerDiv>
             <TitleDiv>{t("privacyFirst")}</TitleDiv>
             <div>{t("weAnonymize")}</div>
           </ContainerDiv>
         </Grid>
-        <Grid size={{md:12, xl:2}}>
+        <Grid item md={12} xl={2}>
           <Image src={Images.CoinImage} alt="coin" {...imageProps} />
         </Grid>
-        <Grid size={{md:12, xl:4}}>
+        <Grid item md={12} xl={4}>
           <ContainerDiv>
             <TitleDiv>{t("weAreTransparent")}</TitleDiv>
             <div>{t("wePublishReports")}</div>
           </ContainerDiv>
         </Grid>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           &nbsp;
         </Grid>
       </Grid>

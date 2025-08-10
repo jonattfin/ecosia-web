@@ -34,65 +34,65 @@ export default function Component({
       </Head>
       <Grid container>
         {/* Search section */}
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
-        <Grid size={{xs:12, xl:6}}>
+        <Grid item xs={12} xl={6}>
           <Components.SearchComponent {...{ q, counter, onSearch, onSearchValueSelected, language, data }} />
         </Grid>
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
         {/* Search section */}
 
         {/* Countries section */}
-        <BlueGrid size={3}>
+        <BlueGrid item xl={3}>
           &nbsp;
         </BlueGrid>
-        <BlueGrid size={{xs:12, xl:6}}>
+        <BlueGrid item xs={12} xl={6}>
           <Components.CountriesComponent {...{ language }} />
         </BlueGrid>
-        <BlueGrid size={3}>
+        <BlueGrid item xl={3}>
           &nbsp;
         </BlueGrid>
         {/* Countries section */}
 
         {/* Map section */}
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
-        <Grid size={{xs:12, xl:6}}>
+        <Grid item xs={12} xl={6}>
           <Components.MapComponent {...{ counter, language }} />
         </Grid>
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
         {/* Map section  */}
 
         {/* Financial section */}
-        <BlueGrid size={3}>
+        <BlueGrid item xl={3}>
           &nbsp;
         </BlueGrid>
-        <BlueGrid size={6}>
+        <BlueGrid item xl={6}>
            <Components.FinancialContainer {...{ language }} />
         </BlueGrid>
-        <BlueGrid size={3}>
+        <BlueGrid item xl={3}>
           &nbsp;
         </BlueGrid>
         {/* Financial section */}
 
         {/* Why choose us section */}
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
-        <Grid size={6}>
+        <Grid item xl={6}>
           <Components.WhyChooseUsComponent {...{ language }} />
         </Grid>
-        <Grid size={3}>
+        <Grid item xl={3}>
           &nbsp;
         </Grid>
         {/* Why choose us section */}
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <section>
             <Components.JoinUsComponent {...{ language }} />
           </section>

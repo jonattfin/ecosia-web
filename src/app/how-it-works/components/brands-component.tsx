@@ -11,7 +11,7 @@ export default function Component() {
   return (
     <section>
       <Grid container spacing={2}>
-        <Grid size={12}>
+        <Grid item xs={12} xl={12}>
           <BrandsContainerDiv>
             {getBrands().map((brand, index) => (
               <Image
